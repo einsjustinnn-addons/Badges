@@ -8,7 +8,7 @@ plugins {
 val versions = providers.gradleProperty("net.labymod.minecraft-versions").get().split(";")
 
 group = "net.crazy"
-version = "1.5.0"
+version = "1.5.1"
 
 labyMod {
     defaultPackageName = "net.crazy.badges"
@@ -16,7 +16,7 @@ labyMod {
     addonInfo {
         namespace = "badges"
         displayName = "Badges"
-        author = "Crazy"
+        author = "LabyMedia"
         description = "Displays players' laby.net badges above their nametag"
         minecraftVersion = "*"
         version = rootProject.version.toString()
