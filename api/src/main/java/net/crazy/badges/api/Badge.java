@@ -7,6 +7,8 @@ import net.labymod.api.util.io.web.request.Request;
 import net.labymod.api.util.io.web.request.Response;
 import java.util.ArrayList;
 import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Badge {
 
@@ -16,6 +18,8 @@ public class Badge {
   public static final int TWO_YEAR_STREAK = 10;
   public static final int THREE_YEAR_STREAK = 11;
   public static final int HIGHEST_YEAR_STREAK = 13;
+
+  private static final Logger LOGGER = Logger.getLogger(Badge.class.getSimpleName());
 
   private final int id;
   private final UUID uuid;
@@ -102,7 +106,7 @@ public class Badge {
         this.players.add(player);
       }
     } catch (Exception exception) {
-      exception.printStackTrace();
+      LOGGER.log(Level.WARNING, "Failed to load badges", exception);
     }
   }
 }

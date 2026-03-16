@@ -10,6 +10,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import net.crazy.badges.api.Badge;
 import net.crazy.badges.api.BadgeManager;
 import net.labymod.api.models.Implements;
@@ -23,6 +25,8 @@ import javax.inject.Singleton;
 public class DefaultBadgeManager implements BadgeManager {
 
   private static final String BADGES_ENDPOINT = "https://laby.net/api/v3/badges";
+
+  private static final Logger LOGGER = Logger.getLogger(DefaultBadgeManager.class.getSimpleName());
 
   private final List<Badge> badges = new ArrayList<>();
   private final Map<UUID, List<Badge>> playerBadges = new HashMap<>();
@@ -104,7 +108,7 @@ public class DefaultBadgeManager implements BadgeManager {
 
       this.badges.sort(Comparator.comparingInt(Badge::getId));
     } catch (Exception exception) {
-      exception.printStackTrace();
+      LOGGER.log(Level.WARNING, "Failed to load badges", exception);
     }
   }
 }

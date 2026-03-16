@@ -23,7 +23,7 @@ public class AddonConfiguration extends AddonConfig {
   private final ConfigProperty<Boolean> compactBadges = new ConfigProperty<>(false);
 
   @SliderSetting(min = 1, max = 10)
-  private final ConfigProperty<Integer> size = new ConfigProperty<>(5);
+  private final ConfigProperty<Integer> size = new ConfigProperty<>(2);
 
   @ActivitySetting
   @MethodOrder(after = "size")

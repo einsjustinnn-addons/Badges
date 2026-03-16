@@ -21,14 +21,14 @@ labyMod {
         minecraftVersion = "*"
         version = rootProject.version.toString()
 
-        releaseChannel.set(ReleaseChannels.SNAPSHOT)
+        releaseChannel.set(ReleaseChannels.PRODUCTION)
     }
 
     minecraft {
         registerVersion(versions.toTypedArray()) {
             runs {
                 getByName("client") {
-                    devLogin = true
+                    devLogin = false
                 }
             }
         }
