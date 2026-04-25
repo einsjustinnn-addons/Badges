@@ -37,7 +37,7 @@ public class Badge {
     this.name = name;
     this.description = description;
     this.iconUrl = String.format(
-        "https://laby.net/texture/badge-small/%s.png",
+        "https://laby.net/api/v3/badge/%s/icon.png?size=256",
         this.uuid.toString()
     );
     this.icon = Icon.url(this.iconUrl).resolution(50, 50);
